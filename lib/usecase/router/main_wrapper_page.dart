@@ -11,6 +11,6 @@ class MainWrapperPage extends StatefulWidget {
 class _MainWrapperPageState extends State<MainWrapperPage> {
   @override
   Widget build(BuildContext context) {
-    return const LandingPage();
+    return LandingPage();
   }
 }
