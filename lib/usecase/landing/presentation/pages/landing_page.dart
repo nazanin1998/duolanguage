@@ -4,7 +4,6 @@ import 'package:duolingo/core/constants/fonts.dart';
 import 'package:duolingo/core/widgets/buttons/neutral_button.dart';
 import 'package:duolingo/usecase/landing/presentation/cubits/hover_cubit.dart';
 import 'package:duolingo/usecase/landing/presentation/cubits/hover_state.dart';
-import 'package:duolingo/usecase/responsive/presentation/cubits/screen_size_cubit.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -24,6 +23,7 @@ import '../widgets/notched_overlay_widget.dart';
 part './landing_page_mobile.dart';
 
 part './landing_page_web.dart';
+
 part './landing_page_tablet.dart';
 
 class LandingPage extends StatelessWidget {
@@ -32,33 +32,12 @@ class LandingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ResponsiveWrapper(
-      mobileWidget: _LandingPageMobile(),
-      tabletWidget: _LandingPageTablet(),
+      mobileWidget: const _LandingPageMobile(),
+      tabletWidget: const _LandingPageTablet(),
       webWidget: _LandingPageWeb(),
     );
   }
 }
-
-Widget get _body => SingleChildScrollView(
-      child: Column(
-        children: [
-          _bodyPageOne,
-          _bodyPageTwo,
-        ],
-      ),
-    );
-
-Widget get _bodyPageTwo => Column(
-      children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            _freeFunTextWidget,
-            AnimationWidget(asset: Animations.learning),
-          ],
-        )
-      ],
-    );
 
 Widget get _freeFunTextWidget => Builder(
     builder: (context) => Container(
@@ -151,53 +130,14 @@ Widget get _startBtn => Builder(builder: (context) {
       );
     });
 
-final OverlayEntry _overlayEntry = OverlayEntry(
-  builder: (context) => Positioned(
-    top: Sizes.appbarHeight / 5 * 4,
-    right: MediaQuery.of(context).size.width / 6,
-    child: MouseRegion(
-      onEnter: (event) {
-        context.read<HoverCubit>().setHoverState(true);
-      },
-      onExit: (s) {
-        context.read<HoverCubit>().setHoverState(false);
-      },
-      child: NotchedOverlayWidget(
-        filledColor: AppColors.white,
-        borderColor: AppColors.neutralGray,
-        child: const LanguageListWidget(),
-      ),
-    ),
-  ),
-);
-
-void _showOverlay(BuildContext context) {
-  Overlay.of(context).insert(_overlayEntry);
-}
-
-void _removeOverlay() {
-  _overlayEntry.remove();
-}
-
-Widget get _language => Builder(
-      builder: (context) => HoverableTextWidget(
-        text: AppLocalizations.of(context)!.siteLanguage,
-        onHover: (bool isTextHovered) {
-          context.read<HoverCubit>().setHoverState(isTextHovered);
-        },
-      ),
-    );
-
 Widget get _logo => SvgPicture.asset(
       Medias.logoWithName,
-      height: Sizes.logoHeight,
+      height: Sizes.logoHeight / 5 * 4,
     );
 
 Widget get _description => Builder(
-    builder: (context) => ConstrainedBox(
-          constraints: BoxConstraints(
-            maxWidth: MediaQuery.of(context).size.width / 3,
-          ),
+    builder: (context) => SizedBox(
+          width: Sizes.btnWidth,
           child: Text(
             AppLocalizations.of(context)!.landingDescription,
             style: Theme.of(context).textTheme.titleLarge,

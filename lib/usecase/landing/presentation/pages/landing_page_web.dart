@@ -122,23 +122,6 @@ class _LandingPageWeb extends StatelessWidget {
             ),
           ));
 
-  Widget get _haveAccountBtn => Builder(builder: (context) {
-        return NeutralButton(
-          text: AppLocalizations.of(context)!.haveAccount,
-          onTap: () {
-            //todo
-          },
-        );
-      });
-
-  Widget get _startBtn => Builder(builder: (context) {
-        return HappyButton(
-          text: AppLocalizations.of(context)!.getStarted,
-          onTap: () {
-            //todo
-          },
-        );
-      });
 
   Widget get _header => Container(
         height: Sizes.appbarHeight,
@@ -202,15 +185,4 @@ class _LandingPageWeb extends StatelessWidget {
         height: Sizes.logoHeight,
       );
 
-  Widget get _description => Builder(
-      builder: (context) => ConstrainedBox(
-            constraints: BoxConstraints(
-              maxWidth: MediaQuery.of(context).size.width / 3,
-            ),
-            child: Text(
-              AppLocalizations.of(context)!.landingDescription,
-              style: Theme.of(context).textTheme.titleLarge,
-              textAlign: TextAlign.center,
-            ),
-          ));
 }
