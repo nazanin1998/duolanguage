@@ -118,6 +118,30 @@ abstract class AppLocalizations {
   /// In fa, this message translates to:
   /// **'راه حل ساده، بامزه و موثر برای یادگیری زبان'**
   String get landingDescription;
+
+  /// No description provided for @learningIsFunTitle.
+  ///
+  /// In fa, this message translates to:
+  /// **'free. fun. effective.'**
+  String get learningIsFunTitle;
+
+  /// No description provided for @learningIsFun.
+  ///
+  /// In fa, this message translates to:
+  /// **'یادگیری با دولینگو بامزه است و '**
+  String get learningIsFun;
+
+  /// No description provided for @learningIsFunRich.
+  ///
+  /// In fa, this message translates to:
+  /// **'تحقیقات نشان داده که عملی است'**
+  String get learningIsFunRich;
+
+  /// No description provided for @learningIsFunAfterRichText.
+  ///
+  /// In fa, this message translates to:
+  /// **'! با درس های سریع و کوچولو شما نکات را یاد میگیرد.'**
+  String get learningIsFunAfterRichText;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {

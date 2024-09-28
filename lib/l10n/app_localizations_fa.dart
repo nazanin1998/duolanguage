@@ -15,4 +15,16 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get landingDescription => 'راه حل ساده، بامزه و موثر برای یادگیری زبان';
+
+  @override
+  String get learningIsFunTitle => 'free. fun. effective.';
+
+  @override
+  String get learningIsFun => 'یادگیری با دولینگو بامزه است و ';
+
+  @override
+  String get learningIsFunRich => 'تحقیقات نشان داده که عملی است';
+
+  @override
+  String get learningIsFunAfterRichText => '! با درس های سریع و کوچولو شما نکات را یاد میگیرد.';
 }

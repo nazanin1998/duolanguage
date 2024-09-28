@@ -4,6 +4,7 @@ import '../../l10n/app_localizations.dart';
 import '../../core/constants/fonts.dart';
 import '../../core/constants/sizes.dart';
 import '../landing/presentation/cubits/hover_cubit.dart';
+import '../responsive/presentation/cubits/screen_size_cubit.dart';
 import 'main_wrapper_page.dart';
 
 class MyApp extends StatelessWidget {
@@ -14,6 +15,7 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
         providers: [
           BlocProvider(create: (context) => HoverCubit()),
+          BlocProvider(create: (context) => ScreenSizeCubit()),
         ],
         child: MaterialApp(
             title: 'Carlo',
@@ -29,6 +31,11 @@ class MyApp extends StatelessWidget {
                 ),
                 bodyMedium: TextStyle(
                   fontSize: Sizes.mainFont,
+                  // fontWeight: FontWeight.bold,
+                  color: const Color(0xAC000000),
+                ),
+                bodyLarge: TextStyle(
+                  fontSize: Sizes.largeFont,
                   // fontWeight: FontWeight.bold,
                   color: const Color(0xAC000000),
                 ),

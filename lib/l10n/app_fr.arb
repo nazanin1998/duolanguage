@@ -2,5 +2,9 @@
   "siteLanguage": "LANGUE DU SITE: FRANCAIS",
   "getStarted": "C'EST PARTI !",
   "haveAccount": "J'AI DEJA UN COMPTE",
-  "landingDescription": "La méthode gratuite, fun et efficace pour apprendre une langue !"
+  "landingDescription": "La méthode gratuite, fun et efficace pour apprendre une langue !",
+  "learningIsFunTitle": "free. fun. effective.",
+  "learningIsFun": "Learning with Duolingo is fun, and ",
+  "learningIsFunRich": "research shows that it works",
+  "learningIsFunAfterRichText": "! With quick, bit-sized lessons, you'll earn points and unlock new levels while gaining real-world communication skills."
 }

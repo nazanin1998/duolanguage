@@ -10,13 +10,15 @@ class Sizes {
   //heights
   static double get logoHeight => 40;
 
-  static double get appbarHeight => 90;
+  static double get appbarHeight => 70;
   static double get iconSize => 15;
 
   //fonts
   static double get mainFont => 14;
+  static double get largeFont => 16;
 
   static double get largeTitleFont => 25;
+  static double get extraLargeTitleFont => 50;
 
   //btn
   static double get btnHeight => 45;

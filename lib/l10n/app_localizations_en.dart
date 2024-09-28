@@ -15,4 +15,16 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get landingDescription => 'The free, fun, and effective way to learn a language!';
+
+  @override
+  String get learningIsFunTitle => 'free. fun. effective.';
+
+  @override
+  String get learningIsFun => 'Learning with Duolingo is fun, and ';
+
+  @override
+  String get learningIsFunRich => 'research shows that it works';
+
+  @override
+  String get learningIsFunAfterRichText => '! With quick, bit-sized lessons, you\'ll earn points and unlock new levels while gaining real-world communication skills.';
 }

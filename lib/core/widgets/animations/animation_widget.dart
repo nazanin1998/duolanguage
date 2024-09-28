@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:duolingo/core/constants/animations.dart';
 import 'package:lottie/lottie.dart';
 
-class LandingFirstAnimationWidget extends StatefulWidget {
-  const LandingFirstAnimationWidget({super.key});
+class AnimationWidget extends StatefulWidget {
+  final String asset;
+  final double width;
+
+  const AnimationWidget({super.key, required this.asset, this.width = 300});
 
   @override
-  State<LandingFirstAnimationWidget> createState() =>
-      _LandingFirstAnimationWidgetState();
+  State<AnimationWidget> createState() => _AnimationWidgetState();
 }
 
-class _LandingFirstAnimationWidgetState
-    extends State<LandingFirstAnimationWidget> {
+class _AnimationWidgetState extends State<AnimationWidget> {
   final loading = ValueNotifier<bool>(false);
 
   @override
@@ -26,8 +26,8 @@ class _LandingFirstAnimationWidgetState
     return ValueListenableBuilder(
       valueListenable: loading,
       builder: (context, value, child) => Lottie.asset(
-        Animations.landing,
-        width: MediaQuery.of(context).size.width / 3,
+        widget.asset,
+        width: widget.width,
         repeat: true,
         animate: value,
         onLoaded: (p0) => loading.value = true,
