@@ -1,8 +1,8 @@
+import 'package:duolingo/core/constants/themes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import '../../core/constants/routes.dart';
 import '../../l10n/app_localizations.dart';
-import '../../core/constants/fonts.dart';
-import '../../core/constants/sizes.dart';
 import '../landing/presentation/cubits/hover_cubit.dart';
 import '../responsive/presentation/cubits/screen_size_cubit.dart';
 import 'main_wrapper_page.dart';
@@ -18,41 +18,12 @@ class MyApp extends StatelessWidget {
           BlocProvider(create: (context) => ScreenSizeCubit()),
         ],
         child: MaterialApp(
+            initialRoute: "/",
             title: 'Carlo',
             localizationsDelegates: AppLocalizations.localizationsDelegates,
             supportedLocales: AppLocalizations.supportedLocales,
-            theme: ThemeData(
-              textTheme: TextTheme(
-                titleLarge: TextStyle(
-                  fontSize: Sizes.largeTitleFont,
-                  fontWeight: FontWeight.bold,
-                  color: const Color(0xAC000000),
-                  height: 1.8,
-                ),
-                bodyMedium: TextStyle(
-                  fontSize: Sizes.mainFont,
-                  // fontWeight: FontWeight.bold,
-                  color: const Color(0xAC000000),
-                ),
-                bodyLarge: TextStyle(
-                  fontSize: Sizes.largeFont,
-                  // fontWeight: FontWeight.bold,
-                  color: const Color(0xAC000000),
-                ),
-                displayMedium: TextStyle(
-                  fontSize: Sizes.mainFont,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white,
-                ),
-                headlineMedium: TextStyle(
-                    fontSize: Sizes.mainFont,
-                    fontWeight: FontWeight.bold,
-                    color: Colors.black38),
-              ),
-              colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-              useMaterial3: true,
-              fontFamily: Fonts.din,
-            ),
+            routes: Routes.routes,
+            theme: Themes.themeData,
             home: const MainWrapperPage()));
   }
 }

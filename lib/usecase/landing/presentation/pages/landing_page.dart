@@ -27,6 +27,7 @@ part './landing_page_web.dart';
 part './landing_page_tablet.dart';
 
 class LandingPage extends StatelessWidget {
+  static const route = "/landing";
   const LandingPage({super.key});
 
   @override
